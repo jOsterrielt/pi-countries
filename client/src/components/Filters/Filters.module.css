@@ -1,0 +1,56 @@
+.filtersContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: aliceblue;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  .navLink {
+    text-decoration: none;
+    color: #213547;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+  }  
+  .resetButton {
+    background-color: #e44d26;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .resetButton:hover {
+    background-color: #d0451b;
+  }
+  .languagesFilter,
+  .sortFilter,
+  .continentFilter,
+  .activityFilter {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .selectBox {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .selectBox:focus {
+    border-color: #6e94b0; 
+  }

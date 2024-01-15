@@ -1,0 +1,33 @@
+.pageContainer {
+  display: flex;
+}
+
+.sidebar {
+  width: 10%; 
+  padding: 10px;
+  border-radius: 0px 0px 15px 15px;
+  background-color: white; 
+  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cardlist {
+  
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  padding: 10px;
+}
+
+.errorContainer {
+  margin-left: 90px;
+}
+
+.errorImage{
+  width: 100%;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 20px;
+}
+

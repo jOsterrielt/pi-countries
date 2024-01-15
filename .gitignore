@@ -1,0 +1,14 @@
+.env
+node_modules
+IniciandoUnPi.md
+README.md
+countries.png
+__tests__/
+test/
+tests/
+testing/
+*.test.js
+*.spec.js
+jest.config.js
+.babelrc
+config/

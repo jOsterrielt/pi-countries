@@ -1,0 +1,13 @@
+.pagContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.input {
+  text-align: center;
+  border-style: solid;
+  border-radius: 15px;
+}

@@ -1,0 +1,187 @@
+.formContainer {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  text-decoration: none;
+  color: rgb(20, 20, 20);
+}
+
+.formSection {
+  width: 400px;
+  margin: 10px 10px 0 0;
+}
+
+.formSection,
+.selectedCountries {
+  flex: 1;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.formLabel {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.formInput,
+.select,
+.countriesList {
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.difficultyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gradientRange {
+  width: 100%;
+  background: linear-gradient(to right, #00ff00, #ff0000);
+  border-radius: 25px;
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.gradientRange input {
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  outline: none;
+}
+
+.gradientRange input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.gradientRange input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.difficultyValue {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  align-self: center;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.successMessage {
+  
+  border: 2px solid rgb(63, 168, 63);
+  border-radius: 15px;
+  background-color: #a9ffac;
+  color: rgb(63, 168, 63);
+  height: auto;
+  font-size: 24px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+}
+
+.createBtn{
+  padding: 10px;
+  color: #a9ffac;
+  background-color: rgb(63, 168, 63);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.cleanBtn {
+  padding: 10px;
+  color: rgb(20, 20, 20);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.createBtn:disabled {
+  color:#ffffff;
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.selectedCountries {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+  height: 620px;
+  margin-top: 20px;
+}
+
+.selectedCountries h2 {
+  font-size: 32px;
+}
+
+.selectedCountries ul {
+  width: 50%;
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.selectedCountries li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.liBtn {
+  padding: 5px;
+  color: rgb(20, 20, 20);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
