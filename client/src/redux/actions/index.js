@@ -18,7 +18,7 @@ export const DELETE_ACTIVITY = "DELETE_ACTIVITY";
 export function getCountries() {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/countries");
+      const response = await axios.get("/countries");
       const languages = Array.from(
         new Set(
           response.data
@@ -43,7 +43,7 @@ export function getCountries() {
 export function getActivities() {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/activities");
+      const response = await axios.get("/activities");
       dispatch({
         type: GET_ACTIVITIES,
         payload: response.data,
@@ -58,7 +58,7 @@ export function getCountriesByName(name) {
   return async function (dispatch) {
     try {
       const response = await axios.get(
-        `http://localhost:3001/countries/name?name=${name}`
+        `/countries/name?name=${name}`
       );
       dispatch({
         type: GET_BY_NAME,
@@ -73,7 +73,7 @@ export function getCountriesByName(name) {
 export function getCountriesByID(ID) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3001/countries/${ID}`);
+      const response = await axios.get(`/countries/${ID}`);
 
       dispatch({
         type: GET_BY_ID,
@@ -93,7 +93,7 @@ export function addActivity(input) {
   return async function (dispatch) {
     try {
       const response = await axios.post(
-        `http://localhost:3001/activities`,
+        `/activities`,
         input
       );
       dispatch({
@@ -109,7 +109,7 @@ export function addActivity(input) {
 export const deleteActivity = (activityId) => {
   return async function (dispatch) {
     try {
-      await axios.delete(`http://localhost:3001/activities/${activityId}`);
+      await axios.delete(`/activities/${activityId}`);
 
       dispatch({
         type: DELETE_ACTIVITY,

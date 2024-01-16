@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import linkedInIcon from "../../assets/icons8-linkedin-50.png";
 import githubIcon from "../../assets/icons8-github-60.png";
-import styles from "./navbar.module.css";
+import styles from "./Navbar.module.css";
 
 const Navbar = ({ handleChange }) => {
   return (

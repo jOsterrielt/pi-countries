@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addActivity } from "../../redux/actions/index";
 import { Link } from "react-router-dom";
 
-import styles from "./form.module.css";
+import styles from "./Form.module.css";
 
 const Form = () => {
   const initialErrors = {

@@ -6,7 +6,7 @@ import Card from "../Card/Card.jsx";
 import Filters from "../Filters/Filters.jsx";
 
 import error404 from "../../assets/404.png";
-import styles from "./cards.module.css";
+import styles from "./Cards.module.css";
 
 const Cards = ({ displayedCountries, setCurrentPage }) => {
   const countryFound = useSelector((state) => state.countryFound);

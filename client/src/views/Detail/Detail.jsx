@@ -8,7 +8,7 @@ import {
   deleteActivity,
 } from "../../redux/actions";
 
-import styles from "./detail.module.css";
+import styles from "./Detail.module.css";
 
 const Detail = () => {
   const dispatch = useDispatch();

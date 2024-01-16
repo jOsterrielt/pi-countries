@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import styles from "./pagination.module.css";
+import styles from "./Pagination.module.css";
 
 const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
   const [inputPage, setInputPage] = useState(currentPage);
