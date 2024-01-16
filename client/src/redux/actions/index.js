@@ -4,16 +4,16 @@ export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_BY_NAME = "GET_BY_NAME";
 export const GET_BY_ID = " GET_BY_ID";
 export const GET_LANGUAGES = "GET_LANGUAGES";
+export const GET_ACTIVITIES = "GET_ACTIVITIES";
+export const DELETE_ACTIVITY = "DELETE_ACTIVITY";
+export const CLEAN_DETAIL = "CLEAN_DETAIL";
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 export const FILTER_BY_LANGUAGE = "FILTER_BY_LANGUAGE";
 export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
 export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT";
-export const RESET = "RESET";
 export const SORT = "SORT";
-export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
-export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-export const CLEAN_DETAIL = "CLEAN_DETAIL";
-export const DELETE_ACTIVITY = "DELETE_ACTIVITY";
+export const CLEAR_FILTERS = "CLEAR_FILTERS";
 
 export function getCountries() {
   return async function (dispatch) {
@@ -57,9 +57,7 @@ export function getActivities() {
 export function getCountriesByName(name) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(
-        `/countries/name?name=${name}`
-      );
+      const response = await axios.get(`/countries/name?name=${name}`);
       dispatch({
         type: GET_BY_NAME,
         payload: response.data,
@@ -92,10 +90,7 @@ export function cleanDetail() {
 export function addActivity(input) {
   return async function (dispatch) {
     try {
-      const response = await axios.post(
-        `/activities`,
-        input
-      );
+      const response = await axios.post(`/activities`, input);
       dispatch({
         type: CREATE_ACTIVITY,
         payload: response.data,
@@ -144,7 +139,7 @@ export function filterByActivity(activity) {
 
 export function reset() {
   return {
-    type: RESET,
+    type: CLEAR_FILTERS,
   };
 }
 

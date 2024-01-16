@@ -4,7 +4,7 @@ import {
   GET_BY_ID,
   CREATE_ACTIVITY,
   FILTER_BY_CONTINENT,
-  RESET,
+  CLEAR_FILTERS,
   SORT,
   GET_ACTIVITIES,
   SET_CURRENT_PAGE,
@@ -152,7 +152,7 @@ function rootReducer(state = initialState, action) {
       };
     }
 
-    case RESET:
+    case CLEAR_FILTERS:
       return {
         ...state,
         allCountries: state.allCountriesCopy,
