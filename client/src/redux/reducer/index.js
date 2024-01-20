@@ -17,7 +17,7 @@ import {
 
 let initialState = {
   allCountries: [],
-  allCountriesCopy: [],
+  orginalCountries: [],
   allCountriesDetail: {},
   activities: [],
   countryFound: null,
@@ -28,20 +28,13 @@ let initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case GET_COUNTRIES: {
-      const flattenedLanguages = Array.from(
-        new Set(
-          action.payload.flatMap((country) =>
-            country.languages ? Object.values(country.languages) : []
-          )
-        )
-      );
       return {
         ...state,
         allCountries: action.payload,
-        allCountriesCopy: action.payload,
-        languages: flattenedLanguages,
+        originalCountries: action.payload,
       };
     }
+
     case GET_ACTIVITIES:
       return {
         ...state,
@@ -87,30 +80,15 @@ function rootReducer(state = initialState, action) {
         languages: action.payload,
       };
 
-    case FILTER_BY_LANGUAGE: {
-      return {
-        ...state,
-        allCountries: state.allCountriesCopy.filter((country) => {
-          const languages = country.languages;
-          if (
-            languages &&
-            typeof languages === "object" &&
-            !Array.isArray(languages)
-          ) {
-            // Si languages es un objeto, convertirlo a un array de valores
-            const languagesArray = Object.values(languages);
-            return languagesArray.includes(action.payload);
-          } else if (Array.isArray(languages)) {
-            // Si languages ya es un array, usarlo directamente
-            return languages.includes(action.payload);
-          }
-          return false;
-        }),
-      };
-    }
-
     case FILTER_BY_CONTINENT: {
-      const filteredCountries = state.allCountriesCopy.filter(
+      if (action.payload === "") {
+        return {
+          ...state,
+          allCountries: state.originalCountries,
+        };
+      }
+
+      const filteredCountries = state.originalCountries.filter(
         (country) => country.continent === action.payload
       );
 
@@ -120,8 +98,35 @@ function rootReducer(state = initialState, action) {
       };
     }
 
+    case FILTER_BY_LANGUAGE: {
+      if (action.payload === "") {
+        return {
+          ...state,
+          allCountries: state.originalCountries,
+        };
+      } else {
+        return {
+          ...state,
+          allCountries: state.allCountries.filter((country) => {
+            const languages = country.languages;
+            if (
+              languages &&
+              typeof languages === "object" &&
+              !Array.isArray(languages)
+            ) {
+              const languagesArray = Object.values(languages);
+              return languagesArray.includes(action.payload);
+            } else if (Array.isArray(languages)) {
+              return languages.includes(action.payload);
+            }
+            return false;
+          }),
+        };
+      }
+    }
+
     case FILTER_BY_ACTIVITY: {
-      const filteredActivities = state.allCountriesCopy.filter((country) =>
+      const filteredActivities = state.allCountries.filter((country) =>
         country.Activities.find((activity) => activity.name === action.payload)
       );
       return {
@@ -131,6 +136,13 @@ function rootReducer(state = initialState, action) {
     }
 
     case SORT: {
+      if (action.payload === "") {
+        return {
+          ...state,
+          allCountries: state.originalCountries,
+        };
+      }
+
       const sortedCountries = [...state.allCountries];
       const { order, field } = action.payload;
       if (field === "name") {
@@ -155,7 +167,7 @@ function rootReducer(state = initialState, action) {
     case CLEAR_FILTERS:
       return {
         ...state,
-        allCountries: state.allCountriesCopy,
+        allCountries: state.originalCountries,
       };
 
     case SET_CURRENT_PAGE:

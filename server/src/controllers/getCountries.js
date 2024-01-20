@@ -8,7 +8,6 @@ const getCountries = async () => {
 
   if (countriesCharged.length === 0) {
     const { data } = await axios(`http://localhost:5000/countries`);
-
     const countriesData = data.map((country) => ({
       ID: country.cca3,
       name: country.name.common || "No name",
@@ -27,7 +26,6 @@ const getCountries = async () => {
       coatOfArms: country.coatOfArms.png,
       googleMaps: country.maps.googleMaps,
     }));
-    console.log(countriesData);
     for (const country of countriesData) {
       country.Activities = await Activity.findAll({
         include: [

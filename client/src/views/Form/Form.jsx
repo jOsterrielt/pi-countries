@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addActivity } from "../../redux/actions/index";
 import { Link } from "react-router-dom";
 
+import activityCreatedImg from "../../assets/activity-created.png";
 import styles from "./Form.module.css";
 
 const Form = () => {
@@ -265,7 +266,7 @@ const Form = () => {
           ))}
         </ul>
         {successMessage && (
-          <p className={styles.successMessage}>{successMessage}</p>
+          <img src={activityCreatedImg} alt="activity created successfully" />
         )}
         {errorMessage && <p className={styles.error}>{errorMessage}</p>}
       </div>

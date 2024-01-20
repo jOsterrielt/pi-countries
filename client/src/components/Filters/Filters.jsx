@@ -12,16 +12,11 @@ import {
 const Filters = ({ setCurrentPage }) => {
   const dispatch = useDispatch();
   const activities = useSelector((state) => state.activities);
-  const languages = useSelector((state) =>
-    state.languages.flatMap((language) => Object.values(language))
-  );
+  const languages = useSelector((state) => state.languages);
 
   function filterByContinentHandler(event) {
     dispatch(filterByContinent(event.target.value));
   }
-
-  const uniqueLanguages = new Set(languages);
-  const languagesList = Array.from(uniqueLanguages);
 
   function filterByLanguageHandler(event) {
     dispatch(filterByLanguage(event.target.value));
@@ -100,7 +95,7 @@ const Filters = ({ setCurrentPage }) => {
           defaultValue=""
         >
           <option value="">Choose...</option>
-          {languagesList.map((language, index) => (
+          {languages.map((language, index) => (
             <option key={`language_${index}`} value={language}>
               {language}
             </option>

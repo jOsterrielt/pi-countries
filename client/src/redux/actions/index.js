@@ -19,23 +19,27 @@ export function getCountries() {
   return async function (dispatch) {
     try {
       const response = await axios.get("/countries");
-      const languages = Array.from(
-        new Set(
-          response.data
-            .flatMap((country) => country.languages)
-            .filter((language) => language !== null)
-        )
-      );
       dispatch({
         type: GET_COUNTRIES,
         payload: response.data,
       });
-      dispatch({
-        type: GET_LANGUAGES,
-        payload: languages,
-      });
     } catch (error) {
       console.error("Error getting countries:", error);
+    }
+  };
+}
+
+export function getLanguages() {
+  return async function (dispatch) {
+    try {
+      const response = await axios.get("/languages");
+
+      dispatch({
+        type: GET_LANGUAGES,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.error(error.message);
     }
   };
 }
@@ -84,7 +88,7 @@ export function getCountriesByID(ID) {
 }
 
 export function cleanDetail() {
-  return { type: "CLEAN_DETAIL" };
+  return { type: CLEAN_DETAIL };
 }
 
 export function addActivity(input) {
