@@ -1,4 +1,7 @@
-<h1>Descripción</h1>
+![countriesapp-readme](https://github.com/jOsterrielt/pi-countries/assets/126017918/6babaffd-0ccc-44cd-964a-e3d403574a70)
+
+<h1>Descripción
+</h1>
 Countries App es una aplicación web que proporciona información detallada sobre diferentes países, permitiendo a los usuarios explorar datos como la población, área, idiomas, actividades disponibles, y más. La aplicación también ofrece herramientas de filtrado y ordenamiento para facilitar la búsqueda de información específica.
 <br>Este proyecto fue creado para poner en practica los conocimientos adquiridos en el bootcamp de desarrollo web Full Stack de <strong>Henry</strong>
 <h1>Tecnologias Utilizadas</h1>
